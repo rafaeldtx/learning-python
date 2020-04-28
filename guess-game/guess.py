@@ -3,17 +3,24 @@ print('*******Guess Game******')
 print('***********************')
 
 secret_number = 43
+attempts = 5
 
-bet_number = int(input('Write your number:'))
+while(attempts > 0):
+  bet_number = int(input('Write your number:'))
 
-print('Your number is:', bet_number, sep=' ')
+  print(attempts,'tentativas restantes', end="\n\n")
+  attempts -= 1
 
-if(bet_number == secret_number):
-  print("You're right!!!")
-else:
-  print("You're wrong. Try again")
-  if(bet_number > secret_number):
-    print("TIP: The secret number is below of", bet_number)
+  print('Your number is:', bet_number, sep=' ', end="\n\n")
+
+  if(bet_number == secret_number):
+    print("You're right!!!")
+    win_game = True
   else:
-    print("TIP: The secret number is above of", bet_number)
+    print("You're wrong. Try again", end="\n\n")
+    if(bet_number > secret_number):
+      print("TIP: The secret number is below of", bet_number, end="\n\n")
+    else:
+      print("TIP: The secret number is above of", bet_number, end="\n\n")
 
+print('End game')
