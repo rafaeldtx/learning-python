@@ -15,12 +15,12 @@ while(attempts > 0):
 
   if(bet_number == secret_number):
     print("You're right!!!")
-    win_game = True
+    break
   else:
     print("You're wrong. Try again", end="\n\n")
     if(bet_number > secret_number):
-      print("TIP: The secret number is below of", bet_number, end="\n\n")
+      print("TIP: The secret number is below of {}".format(bet_number), end="\n\n")
     else:
-      print("TIP: The secret number is above of", bet_number, end="\n\n")
+      print("TIP: The secret number is above of {}".format(bet_number), end="\n\n")
 
 print('End game')
