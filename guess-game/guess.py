@@ -1,13 +1,15 @@
+import random
+
 print('***********************')
 print('*******Guess Game******')
 print('***********************')
 
-secret_number = 43
+secret_number = random.randrange(1,101)
 attempts = 5
 
 while(attempts > 0):
   print(f'{attempts} tentativas restantes', end="\n\n")
-  bet_number = int(input('Write your number:'))
+  bet_number = int(input('Write your number between 1 and 100: '))
   attempts -= 1
 
   print(f'Your number is: {bet_number}', sep=' ', end="\n\n")
