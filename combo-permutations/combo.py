@@ -1,8 +1,12 @@
+# Python 3.7.5
+# Author: Rafael Domingues Teixeira
+# Date: 2020-04-30
+
 def combos(word):
   # calls method permutations for string word
   combos = permutations(str(word))
 
-  # do the regression of combos for each one permutation letter
+  # do the regression of combos for each one combo length
   regression_combos = []
   for count in range(1, len(word)):
     for p in combos:
@@ -41,7 +45,7 @@ def permutations(word):
 
     # do the permutation with new list
     for permutated in permutations(list_without_index):
-      # append permutated with the word of index
+      # append permutated with the letter of index
       permutated_word.append([letter] + permutated)
   return permutated_word
 
