@@ -21,6 +21,7 @@ def combos(word):
 
   # print each one combo
   print("------- PERMUTATIONS --------")
+  print("STRING: {}".format(word))
   print("TOTAL: {} combos".format(len(combos)), end='\n\n')
 
   for combo in combos:
