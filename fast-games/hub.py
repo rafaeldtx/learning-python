@@ -9,13 +9,13 @@ print('*****************', end='\n\n')
 print('Which game do you want to play?')
 print('1- Guess \n2- Hangman', end='\n\n')
 
-game_choice = int(input('Informe the number:'))
+game_choice = int(input('Put the game number:'))
 print('------------------------------', end='\n\n')
 
 if game_choice == 1:
-  guess.start()
+    guess.start()
 elif game_choice == 2:
-  hangman.start()
+    hangman.start()
 else:
-  print('Invalid value. Put one in the list.')
+    print('Invalid value. Put one in the list.')
 
