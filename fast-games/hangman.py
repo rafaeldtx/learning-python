@@ -28,9 +28,12 @@ def start():
 
             new_letter = input('Digit a new letter:').upper()
 
-            if len(new_letter) > 1 or any(i.isdigit() for i in new_letter):
+            if len(new_letter) != 1 or new_letter.isdigit():
                 print('Wrong value informed. Put only one LETTER.')
             elif new_letter in bet_letters:
                 print(f'Letter "{new_letter}" was been informed before. Try another one.')
             else:
                 bet_letters.append(new_letter)
+
+if(__name__ == "__main__"):
+    start()
