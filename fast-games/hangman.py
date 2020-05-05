@@ -5,36 +5,28 @@ def start():
 
     bet_letters = []
     secret_word = 'banana'
-    right_letters = []
-
-    for letter in secret_word:
-        right_letters.append('_')
+    right_letters = ["_" for letter in secret_word]
 
     attempts = calls_difficulty_attempts()
 
     while attempts > 0:
-        bet_letters.sort()
+        show_bet_letters = ', '.join(bet_letters)
 
         print('--------------------------', end='\n\n')
-        if len(bet_letters):
-            print(f"CHUTES: {', '.join(bet_letters)}", end='\n\n')
-
+        print(f"CHUTES: {show_bet_letters}")
         print(f"PALAVRA: {' '.join(right_letters)}", end='\n\n')
 
-        new_letter = input('Digit a new letter:').upper()
+        new_bet_letter = input('Digit a new letter:').strip().upper()
 
-        if len(new_letter) != 1 or new_letter.isdigit():
+        if len(new_bet_letter) != 1 or new_bet_letter.isdigit():
             print('Wrong value informed. Put only one LETTER.')
-        elif new_letter in bet_letters:
-            print(f'Letter "{new_letter}" was been informed before. Try another one.')
+        elif new_bet_letter in bet_letters:
+            print(f'Letter "{new_bet_letter}" was been informed before. Try another one.')
         else:
-            bet_letters.append(new_letter)
+            bet_letters.append(new_bet_letter)
+            bet_letters.sort()
 
-            for index in range(0, len(secret_word)):
-                secret_letter = secret_word[index].upper()
-
-                if new_letter == secret_letter:
-                    right_letters[index] = secret_letter
+            get_right_letters(secret_word, new_bet_letter, right_letters)
 
 
 def calls_difficulty_attempts():
@@ -55,6 +47,15 @@ def calls_difficulty_attempts():
             print('Not valid level. Insert between 1 and 3', end='\n\n')
 
     return attempts
+
+def get_right_letters(secret_word, new_bet_letter, right_letters):
+    for index in range(0, len(secret_word)):
+        secret_letter = secret_word[index].upper()
+
+        if new_bet_letter == secret_letter:
+            right_letters[index] = secret_letter
+
+    return right_letters
 
 if(__name__ == "__main__"):
     start()
