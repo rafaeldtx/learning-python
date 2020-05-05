@@ -1,19 +1,7 @@
 import random
 
 def start():
-    secret_words = [
-        'apple',
-        'avocado',
-        'banana',
-        'cucumber',
-        'grape',
-        'lettuce',
-        'pineapple',
-        'pumpkin',
-        'tomato',
-    ]
-
-    secret_word = random.choice(secret_words)
+    secret_word = random.choice(secret_words_list())
     right_letters = ["_" for letter in secret_word]
     attempts = get_difficulty_attempts()
     bet_letters = []
@@ -68,6 +56,19 @@ def get_right_letters(secret_word, new_bet_letter, right_letters):
             right_letters[index] = secret_letter
 
     return right_letters
+
+def secret_words_list():
+    return [
+        'apple',
+        'avocado',
+        'banana',
+        'cucumber',
+        'grape',
+        'lettuce',
+        'pineapple',
+        'pumpkin',
+        'tomato',
+    ]
 
 if(__name__ == "__main__"):
     start()
