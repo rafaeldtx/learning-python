@@ -1,13 +1,26 @@
+import random
+
 def start():
+    secret_words = [
+        'apple',
+        'avocado',
+        'banana',
+        'cucumber',
+        'grape',
+        'lettuce',
+        'pineapple',
+        'pumpkin',
+        'tomato',
+    ]
+
+    secret_word = random.choice(secret_words)
+    right_letters = ["_" for letter in secret_word]
+    attempts = get_difficulty_attempts()
+    bet_letters = []
+
     print('********************')
     print('****HANGMAN GAME****')
     print('********************', end='\n\n')
-
-    bet_letters = []
-    secret_word = 'banana'
-    right_letters = ["_" for letter in secret_word]
-
-    attempts = calls_difficulty_attempts()
 
     while attempts > 0:
         show_bet_letters = ', '.join(bet_letters)
@@ -28,8 +41,7 @@ def start():
 
             get_right_letters(secret_word, new_bet_letter, right_letters)
 
-
-def calls_difficulty_attempts():
+def get_difficulty_attempts():
     attempts = None
 
     while attempts == None:
