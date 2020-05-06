@@ -69,17 +69,8 @@ def set_right_letters(secret_word, new_bet_letter, right_letters):
     return right_letters
 
 def get_secret_words_list():
-    return [
-        'apple',
-        'avocado',
-        'banana',
-        'cucumber',
-        'grape',
-        'lettuce',
-        'pineapple',
-        'pumpkin',
-        'tomato',
-    ]
+    secret_words_file = open("secret_words.txt", "r")
+    return [word_line.strip() for word_line in secret_words_file]
 
 def right_bet(new_bet, bet_list):
     return(
