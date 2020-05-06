@@ -7,3 +7,9 @@ class BankAccount:
 
     def show_amount(self):
         print(f'The owner {self.owner} has amount of {self.amount}')
+
+    def withdraw(self, value):
+        self.amount -= value
+
+    def deposit(self, value):
+        self.amount += value
