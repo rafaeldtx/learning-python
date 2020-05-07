@@ -13,3 +13,7 @@ class BankAccount:
 
     def deposit(self, value):
         self.__amount += value
+
+    def transfer(self, value, bank_account):
+        self.withdraw(value)
+        bank_account.deposit(value)
