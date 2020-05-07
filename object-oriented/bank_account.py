@@ -1,15 +1,15 @@
 class BankAccount:
     def __init__(self, owner, number, amount, limit):
-        self.number = number
-        self.owner = owner
-        self.amount = amount
-        self.limit = limit
+        self.__number = number
+        self.__owner = owner
+        self.__amount = amount
+        self.__limit = limit
 
     def show_amount(self):
-        print(f'The owner {self.owner} has amount of {self.amount}')
+        print(f'The owner {self.__owner} has amount of {self.__amount}')
 
     def withdraw(self, value):
-        self.amount -= value
+        self.__amount -= value
 
     def deposit(self, value):
-        self.amount += value
+        self.__amount += value
