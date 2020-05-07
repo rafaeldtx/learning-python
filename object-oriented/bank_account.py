@@ -9,6 +9,10 @@ class BankAccount:
     def owner(self):
         return self.__owner
 
+    @owner.setter
+    def owner(self, owner):
+        self.__owner = owner
+
     @property
     def number(self):
         return self.__number
