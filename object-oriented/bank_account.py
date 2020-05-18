@@ -30,3 +30,7 @@ class BankAccount:
     def transfer(self, value, bank_account):
         self.withdraw(value)
         bank_account.deposit(value)
+
+    @staticmethod
+    def bank_code():
+        return '001'
