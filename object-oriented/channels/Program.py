@@ -38,3 +38,9 @@ class Serie(Program):
 
     def __str__(self):
         return f'Name: {self.name} - Year: {self.year} - Likes: {self.likes} - Seasons: {self.seasons}'
+
+class Playlist(list):
+    def __init__(self, name, programs):
+        self.__name = name
+        super().__init__(programs)
+
