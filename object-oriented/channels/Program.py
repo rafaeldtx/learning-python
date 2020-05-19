@@ -16,10 +16,6 @@ class Program:
     def likes(self):
         return self._likes
 
-    @likes.setter
-    def likes(self, likes):
-        self._likes = likes.title()
-
     def __str__(self):
         return f'Name: {self.name} - Year: {self.year} - Likes: {self.likes}'
 
@@ -30,14 +26,6 @@ class Film(Program):
 
     def __str__(self):
         return f'Name: {self.name} - Year: {self.year} - Likes: {self.likes} - Duration: {self.duration}min'
-
-class Serie(Program):
-    def __init__(self, name, year, seasons):
-        super().__init__(name, year)
-        self.seasons = seasons
-
-    def __str__(self):
-        return f'Name: {self.name} - Year: {self.year} - Likes: {self.likes} - Seasons: {self.seasons}'
 
 class Playlist:
     def __init__(self, name, programs):
