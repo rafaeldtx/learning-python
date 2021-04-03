@@ -4,7 +4,7 @@ Este repo tem por objetivo documentar os estudos referentes ao [Curso de Python3
 
 Inclui: programação com Django, PyQT5, Selenium, Regexp, Testes e TDD, POO, Design Patterns GoF, algoritmos.
 
-# Sumário
+## Sumário
 
 - 1. Python Básico (Lógica)
     - 1.1 Comentários
